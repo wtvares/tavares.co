@@ -1,0 +1,179 @@
+
+html {
+    background-color: #fff;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #000;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 65px;
+    line-height: 55px;
+    letter-spacing: -3px;
+  }
+
+  p,
+  a {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #000;
+  }
+  
+  a:link {
+  text-decoration: none;
+}
+
+
+  a:hover {
+    border-bottom: 1px solid;
+  }
+  
+  .main-container {
+    display: block;
+    margin-top: 14px;
+    margin-left: 20px;
+    width: 90%
+  }
+  
+  
+  .footer {
+    position: fixed;
+    display: block;
+    bottom: 18px;
+    width: 90%;
+    padding-top: 10px;
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+
+  .footer a{
+    width: 300px;
+  }
+
+
+  
+  /* Tablets - Landscape */
+  @media (min-width: 720px) {
+    .main-container {
+      display: block;
+      grid-template-columns: 30% 30% 30% 30%;
+      margin-top: 14px;
+      margin-left: 20px;
+    }
+
+     .footer {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%;
+    bottom: 18px;
+    width: 90%;
+    padding-top: 10px;
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+   
+  }
+  
+  /* Desktop */
+  @media only screen and (min-width: 1024px) {
+    body,
+    h1,
+    h2,
+    h3{
+      font-size: 65px;
+      line-height: 55px;
+      letter-spacing: -5px;
+    }
+
+    p,
+    a {
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 0px;
+    }
+
+    .main-container {
+      display: grid;
+      grid-template-columns: 30% 30% 30% 30%;
+       margin-top: 14px;
+      margin-left: 20px;
+      width: 90%
+     
+    }
+
+   .footer {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%;
+    bottom: 18px;
+    width: 90%;
+    padding-top: 10px;
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+
+
+  }
+  
+  /* Big Screens */
+  @media only screen and (min-width: 1681px) {
+    body,
+    h1,
+    h2,
+    h3{
+      font-size: 75px;
+      line-height: 55px;
+      letter-spacing: -5px;
+    }
+
+     p,
+     a{
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 0px;
+    }
+
+    .main-container {
+      display: grid;
+        grid-template-columns: 30% 30% 30% 30%;
+       margin-top: 14px;
+      margin-left: 20px;
+    width: 90%
+    }
+  
+   .footer {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%;
+    bottom: 18px;
+    width: 90%;
+    padding-top: 10px;
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+
+  }
+  
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-color: #000;
+    }
+    body,
+    hr,
+    h1,
+    h2,
+    h3,
+    a {
+      color: #fff;
+    }
+  }
+  
