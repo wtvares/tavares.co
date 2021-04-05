@@ -21,8 +21,8 @@ html {
 
   p,
   a {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 16px;
+    line-height: 16px;
     letter-spacing: 0px;
     color: #000;
   }
@@ -61,7 +61,7 @@ html {
 
   
   /* Tablets - Landscape */
-  @media (max-width: 720px) {
+  @media (min-width: 768px) {
     .main-container {
       display: block;
       grid-template-columns: 30% 30% 30% 30%;
@@ -71,8 +71,6 @@ html {
 
      .footer {
     position: fixed;
-    display: grid;
-    grid-template-columns: 30% 30% 30% 30%;
     bottom: 18px;
     width: 90%;
     padding-top: 10px;
