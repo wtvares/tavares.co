@@ -61,7 +61,7 @@ html {
 
   
   /* Tablets - Landscape */
-  @media (min-width: 820px) {
+  @media (max-width: 720px) {
     .main-container {
       display: block;
       grid-template-columns: 30% 30% 30% 30%;
