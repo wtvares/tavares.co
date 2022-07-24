@@ -127,15 +127,15 @@ html {
     h1,
     h2,
     h3{
-      font-size: 75px;
-      line-height: 55px;
+      font-size: 80px;
+      line-height: 95px;
       letter-spacing: -5px;
     }
 
      p,
      a{
       font-size: 14px;
-      line-height: 14px;
+      line-height: 18px;
       letter-spacing: 0px;
     }
 
