@@ -1,36 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Wellington Tavares</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/black-medium-small-square_25fe.png">
-    <meta name="description" content="Senior Product Designer at Spotify">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Wellington Tavares</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/black-medium-small-square_25fe.png">
+  <meta name="description" content="Senior Product Designer">
+  
+  <!-- Link to Google Fonts for Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="main-container"> 
-    	<h1>TAVARES</h1> 
-    	<h1></h1> 
-    	<h1>16-24</h1>
-    	 </div>
-    
 
-      <div class="footer">
-         
-        <p>Sr. Product Designer<br> at <a href="https://spotify.design/" target="_blank">Spotify</a></p>
-        <p>Previously at<br> <a href="https://amazon.design/" target="_blank">Amazon</a>, <a href="https://www.fjordnet.com/" target="_blank">FJORD</a> and <a href="https://www.hugeinc.com/" target="_blank">Huge</a></p>
-        <p>From <a href="https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_(state)" target="_blank">SP</a><br> living in Berlin</p>
-        <p><a href="https://savee.it/tavares/" target="_blank">Savee</a><br> <a href="https://www.linkedin.com/in/wellingtontavares/" target="_blank">Linkedin</a></p>
-        
-      </div>
+  <div class="portfolio-section">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Wellington Tavares</h1>
+      <p>
+        I’m a Berlin-based designer who values simplicity in both design and life. My experience includes working with companies like Spotify, Amazon, Fjord, and Huge, where I developed my skills in creating clean and impactful designs.
+        <br><br>Here you can find a few highlights; feel free to reach out to request my full portfolio.
+    </p>
+    <button class="email-button" onclick="copyEmail()">
+        <span id="email-address">hi@tavares.co</span>
+        <!-- Inserted SVG icon directly into the button -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
+          </svg>               
+    </button>
+    <script src="script.js"></script>
     </div>
 
-  </body>
+    <!-- Image Section -->
+    <div class="image-section">
+      <img src="img/rev.gif" alt="Revolut <18 App Screenshot">
+      <div class="caption">Revolut &lt;18 <p> — I led design in the &lt;18 department, supporting growth, education, and core squads. I'm especially proud of the onboarding redesign we implemented </p> </div>
+      <button class="download-button" onclick="openLink()">
+        <span>Download the app</span>
+        <!-- Inserted SVG icon directly into the button -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+          
+    </button>
+    </div>
+    <div class="image-section">
+        <img src="img/spot1.png" alt="Revolut <18 App Screenshot">
+        <div class="caption">Spotify Account <p> — I contributed to a company-bet to redesign the Spotify Account Management framework for Users, Creators, and Teams across all platforms. Phase 1 alone reduced customer support contacts by 8% </p> </div>
+        <button class="download-button" onclick="openLink()">
+            <span>Go to Spotify Account</span>
+            <!-- Inserted SVG icon directly into the button -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              
+        </button>
+    
+    </div>
+      <div class="image-section">
+        <img src="img/spot2.gif" alt="Revolut <18 App Screenshot">
+        <div class="caption">Spotify Subs <p> — I was part of a team tasked with creating added value for subscribers and crafting a new top-tier subscription offering </p> </div>
+      </div>
+      <div class="image-section">
+        <img src="img/amazon.png" alt="Revolut <18 App Screenshot">
+        <div class="caption">Amazon Reviews <p> — At Amazon, I collaborated across multiple projects, including Search, Checkout, and Reviews. One of my favorite projects was redesigning the Video Creation experience.
+        </p> </div>
+      </div>
+
+   <!-- Footer -->
+   <footer>
+    <p>
+        Verion 1. Last updated on October 30, 2024. <br> Thank you to everyone who has supported me throughout my journey.
+    </p>
+</footer>
+
+  </div>
 
 
-
-
+</body>
 </html>
