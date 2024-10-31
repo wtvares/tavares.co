@@ -60,6 +60,11 @@ body {
   border-radius: 0px;
 }
 
+.image-section video {
+  width: 100%;
+  border-radius: 0px;
+}
+
 .caption {
   margin-top: 10px;
   font-size: 1rem;
