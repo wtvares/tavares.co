@@ -147,6 +147,35 @@ color: white;
 background: black;
 }
 
+.toast-notification {
+  visibility: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  min-width: 80px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.toast-notification.show {
+  visibility: visible;
+  animation: fadeInOut 2.5s;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; bottom: 0; }
+  20% { opacity: 1; bottom: 30px; }
+  80% { opacity: 1; bottom: 30px; }
+  100% { opacity: 0; bottom: 30px; }
+}
 
 @media (max-width: 600px) {
   
