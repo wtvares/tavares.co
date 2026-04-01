@@ -11,28 +11,43 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <div class="portfolio-section">
     <!-- Header Section -->
     <div class="header">
-      <h1>Wellington Tavares</h1>
+      <h1 class="scramble-text" data-text="Wellington Tavares">Wellington Tavares</h1>
       <p>
-        I’m a Berlin-based designer who values simplicity in both design and life. With experience at Spotify, Amazon, and Fjord, I’ve built strong skills in strategy, craft, product thinking, and delivering value through design.
+        I’m a Berlin-based designer who values simplicity in both design and life. With experience at <a class="intro-link" href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify</a>, <a class="intro-link" href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>, and <a class="intro-link" href="https://www.fjordnet.com/" target="_blank" rel="noopener noreferrer">Fjord</a>, I’ve built strong skills in strategy, craft, product thinking, and delivering value through design.
         <br><br>Here you can find a few highlights; feel free to reach out to request my full portfolio.
     </p>
     <button class="email-button" onclick="copyEmail()">
         <span id="email-address">hi@tavares.co</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <span class="email-icon-slot" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 email-icon email-icon-copy">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
-          </svg>               
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6 email-icon email-icon-check">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </span>              
     </button>
-    <script src="script.js"></script>
     </div>
 
     <div class="image-section">
-      <video autoplay loop muted playsinline>
+        <img src="img/gyg.png" alt="GetYourGuide product screenshot" loading="lazy">
+        <div class="caption">GetYourGuide <p> — Currently supporting GYG’s mission to create unforgettable experiences. I’m shaping the activity detail page and improving the reviews experience, while also contributing across other parts of the product to make discovery and booking clearer, more useful, and more inspiring. More soon. </p> </div>
+        <button class="download-button" onclick="openGetYourGuideLink()">
+            <span>Download the app</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+        </button>
+    </div>
+    <div class="image-section">
+      <video autoplay loop muted playsinline preload="metadata">
         <source src="img/rev.mp4" type="video/mp4">
       </video>
       <div class="caption">Revolut &lt;18 <p> — To improve financial education for kids and teens, Revolut created a standalone app for Gen Z, now used by over 5 million users. I led design in the &lt;18 department, supporting growth, education, and core teams.  I'm especially proud of the onboarding redesign we implemented </p> </div>
@@ -55,35 +70,32 @@
               
         </button>
     
-    </div>
+      </div>
       <div class="image-section">
-        <video autoplay loop muted playsinline>
-          <source src="img/spot2.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline preload="none" data-lazy-video>
+          <source data-src="img/spot2.mp4" type="video/mp4">
         </video>
         <div class="caption">Spotify Subs <p> — While working in the Subscription team, I helped create new ways to add value for subscribers by experimenting with features and applying design discovery methods. We also began developing a top-tier subscription offering </p> </div>
       </div>
       <div class="image-section">
-        <video autoplay loop muted playsinline>
-          <source src="img/amazon.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline preload="none" poster="img/amazon.png" data-lazy-video>
+          <source data-src="img/amazon.mp4" type="video/mp4">
         </video>
         <div class="caption">Amazon Reviews <p> — At Amazon, I collaborated with multiple teams, including Search, Checkout, and Reviews. One of my favorite projects was designing the video creation concept to provide tools for creators and reviewers to enhance the Amazon video experience
         </p> </div>
       </div>
 
       <div class="image-section">
-        <video autoplay loop muted playsinline>
-          <source src="img/Edp.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline preload="none" data-lazy-video>
+          <source data-src="img/Edp.mp4" type="video/mp4">
         </video>
         <div class="caption">EDP Platform <p> — At Fjord, I designed a call center platform for EDP. This project was a special milestone for me, as my first job was in a call center before I began my career in design
         </p> </div>
       </div>
 
-      <div id="toast" class="toast-notification"></div>
-
-  
    <footer>
     <p>
-        Version 1. Last updated on October 30, 2024. <br> Thank you to everyone who has supported me throughout my journey.
+        Version 1.2. Last updated on April 1, 2026. <br> Thank you to everyone who has supported me throughout my journey.
     </p>
     </footer>
 

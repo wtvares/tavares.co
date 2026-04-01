@@ -1,3 +1,20 @@
+/* Color system */
+:root {
+  color-scheme: light;
+  --page-bg: #ffffff;
+  --text-strong: #151515;
+  --text-body: #525252;
+  --text-muted: #808080;
+  --button-bg: #ffffff;
+  --button-bg-hover: #f6f6f6;
+  --button-border: #ececec;
+  --button-text: #000000;
+  --link-underline: rgba(82, 82, 82, 0.22);
+  --link-underline-hover: rgba(0, 0, 0, 0.55);
+  --selection-bg: #000000;
+  --selection-text: #ffffff;
+}
+
 /* Basic reset */
 * {
   margin: 0;
@@ -8,17 +25,19 @@
 
 body {
   font-family: 'Inter', sans-serif; /* Example header font */
-  background-color: #fff;
+  background-color: var(--page-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
+  color: var(--text-strong);
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 .portfolio-section {
   max-width: 600px;
-  background-color: #ffffff;
+  background-color: transparent;
   padding: 30px;
   text-align: left;
 }
@@ -33,20 +52,39 @@ body {
 .header h1 {
   font-family: 'Inter', sans-serif; /* Example header font */
   font-size: 1rem;
-  color: #151515;
+  color: var(--text-strong);
   margin-bottom: 10px;
   font-weight: 600; /* Bold weight for h1 */
+  display: inline-block;
+  cursor: pointer;
+  transition: color 280ms ease;
 }
 
 .header p {
   font-family: 'EB Garamond', serif; /* EB Garamond for body text */
   font-size: 1.2rem;
-  color: #525252;
+  color: var(--text-body);
   line-height: 1.6;
   margin-bottom: 20px;
   font-weight: 300; /* Normal weight for paragraph text */
   -webkit-font-smoothing: antialiased; /* For WebKit browsers */
   -moz-osx-font-smoothing: grayscale; 
+  transition: color 280ms ease;
+}
+
+.intro-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 6px;
+  transition: color 280ms ease, text-decoration-color 280ms ease;
+}
+
+.intro-link:hover {
+  color: var(--button-text);
+  text-decoration-color: var(--link-underline-hover);
 }
 
 
@@ -55,70 +93,124 @@ body {
   margin: 140px 0;
 }
 
+.image-section.reveal-ready {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.image-section.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .image-section img {
-  width: 100%;
-  border-radius: 0px;
+  width: 108%;
+  margin-left: -4%;
+  display: block;
+  border-radius: 20px;
+  clip-path: inset(0 round 20px);
 }
 
 .image-section video {
-  width: 100%;
-  border-radius: 0px;
+  width: 108%;
+  margin-left: -4%;
+  display: block;
+  border-radius: 20px;
+  clip-path: inset(0 round 20px);
 }
 
 .caption {
-  margin-top: 10px;
+  margin-top: 26px;
   font-size: 1rem;
   font-weight: bold;
-  color: #333333;
+  color: var(--text-strong);
+  transition: color 280ms ease;
 }
 
 .caption p {
   display: inline;
   font-family: 'EB Garamond', serif; /* EB Garamond for body text */
   font-size: 1.2rem;
-  color: #525252;
+  color: var(--text-body);
   margin-top: 10px;
   font-weight: 300;
   -webkit-font-smoothing: antialiased; /* For WebKit browsers */
   -moz-osx-font-smoothing: grayscale; 
+  transition: color 280ms ease;
 }
 
 .email-button {
   display: inline-flex;
   align-items: center;
   padding: 8px 8px;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: 0.1rem solid;
   border-radius: 8px;
-  border-color: #ECECEC;
+  border-color: var(--button-border);
   font-size: 0.9rem;
   cursor: pointer;
   font-family: Inter, sans-serif;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .email-button:hover {
-  background-color: #F6F6F6;
+  background-color: var(--button-bg-hover);
+}
+
+.email-icon-slot {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+.email-icon {
+  position: absolute;
+  inset: 0;
+  margin-left: 0;
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.email-icon-slot .size-6 {
+  margin-left: 0;
+}
+
+.email-icon-check {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.email-button.copied .email-icon-copy {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.email-button.copied .email-icon-check {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .download-button {
   display: inline-flex;
   align-items: center;
   padding: 8px 8px;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: 0.1rem solid;
   border-radius: 8px;
-  border-color: #ECECEC;
+  border-color: var(--button-border);
   font-size: 0.9rem;
   cursor: pointer;
   font-family: Inter, sans-serif;
   margin: 20px 0;
-
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .download-button:hover {
-  background-color: #F6F6F6;
+  background-color: var(--button-bg-hover);
 }
 
 .size-6 {
@@ -131,10 +223,11 @@ footer {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  color: #808080; /* Text color */
+  color: var(--text-muted); /* Text color */
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   text-align: center; /* Center text within the paragraph */
+  transition: color 280ms ease;
 }
 
 footer p {
@@ -143,43 +236,13 @@ footer p {
 }
 
 ::-moz-selection { /* Code for Firefox */
-color: white;
-background: black;
+color: var(--selection-text);
+background: var(--selection-bg);
 }
 
 ::selection {
-color: white;
-background: black;
-}
-
-.toast-notification {
-  visibility: hidden;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  min-width: 80px;
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  border-radius: 8px;
-  padding: 12px;
-  position: fixed;
-  z-index: 1000;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-}
-
-.toast-notification.show {
-  visibility: visible;
-  animation: fadeInOut 2.5s;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; bottom: 0; }
-  20% { opacity: 1; bottom: 30px; }
-  80% { opacity: 1; bottom: 30px; }
-  100% { opacity: 0; bottom: 30px; }
+color: var(--selection-text);
+background: var(--selection-bg);
 }
 
 @media (max-width: 600px) {
@@ -191,4 +254,33 @@ background: black;
   .portfolio-section {
     padding: 0px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-section.reveal-ready {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .header h1,
+  .email-icon {
+    transition: none;
+  }
+}
+
+body.dark-mode {
+  --page-bg: #1a1b20;
+  --text-strong: #f2eee8;
+  --text-body: #bfb8af;
+  --text-muted: #938c83;
+  --button-bg: rgba(255, 255, 255, 0.03);
+  --button-bg-hover: rgba(255, 255, 255, 0.08);
+  --button-border: rgba(255, 255, 255, 0.12);
+  --button-text: #f7f3ed;
+  --link-underline: rgba(242, 238, 232, 0.22);
+  --link-underline-hover: rgba(247, 243, 237, 0.6);
+  --selection-bg: #f7f3ed;
+  --selection-text: #121318;
+  color-scheme: dark;
 }
