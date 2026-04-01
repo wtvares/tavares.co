@@ -246,13 +246,18 @@ background: var(--selection-bg);
 }
 
 @media (max-width: 600px) {
-  
-  .body {
-      padding: 16px;
+  body {
+      padding: 24px 20px 32px;
   }
 
   .portfolio-section {
-    padding: 0px;
+    padding: 0;
+  }
+
+  .image-section img,
+  .image-section video {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
