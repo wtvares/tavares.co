@@ -45,6 +45,8 @@ function openSpotifyLink() {
 
 function setupNameScramble() {
     const name = document.querySelector('.scramble-text');
+    const nameBlock = document.querySelector('.name-block');
+    const avatar = document.querySelector('.name-avatar');
     const body = document.body;
 
     if (!name || !body) {
@@ -113,6 +115,26 @@ function setupNameScramble() {
     name.addEventListener('mouseleave', () => {
         cancelAnimationFrame(frameId);
         name.textContent = originalText;
+    });
+
+    if (!nameBlock || !avatar) {
+        return;
+    }
+
+    nameBlock.addEventListener('pointermove', (event) => {
+        const rect = nameBlock.getBoundingClientRect();
+        const relativeX = ((event.clientX - rect.left) / rect.width) - 0.5;
+        const relativeY = ((event.clientY - rect.top) / rect.height) - 0.5;
+        const shiftX = Math.max(-10, Math.min(10, relativeX * 20));
+        const shiftY = Math.max(-6, Math.min(6, relativeY * 12));
+
+        avatar.style.setProperty('--avatar-shift-x', `${shiftX}px`);
+        avatar.style.setProperty('--avatar-shift-y', `${shiftY}px`);
+    });
+
+    nameBlock.addEventListener('pointerleave', () => {
+        avatar.style.setProperty('--avatar-shift-x', '0px');
+        avatar.style.setProperty('--avatar-shift-y', '0px');
     });
 }
 

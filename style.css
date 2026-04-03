@@ -49,6 +49,44 @@ body {
   
 }
 
+.name-block {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name-avatar {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  --avatar-shift-x: 0px;
+  --avatar-shift-y: 0px;
+  transform: translateX(calc(-50% + var(--avatar-shift-x))) translateY(calc(12px + var(--avatar-shift-y))) scale(0.92);
+  transition:
+    opacity 280ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 280ms ease,
+    box-shadow 280ms ease;
+  overflow: hidden;
+}
+
+.name-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
 .header h1 {
   font-family: 'Inter', sans-serif; /* Example header font */
   font-size: 1rem;
@@ -58,6 +96,12 @@ body {
   display: inline-block;
   cursor: pointer;
   transition: color 280ms ease;
+}
+
+.name-block:hover .name-avatar,
+.name-block:focus-within .name-avatar {
+  opacity: 1;
+  transform: translateX(calc(-50% + var(--avatar-shift-x))) translateY(var(--avatar-shift-y)) scale(1);
 }
 
 .header p {
@@ -188,11 +232,13 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
   font-family: Inter, sans-serif;
-  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  box-shadow: 0 0 0 rgba(17, 17, 17, 0);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 220ms ease;
 }
 
 .email-button:hover {
   background-color: var(--button-bg-hover);
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.06);
 }
 
 .email-icon-slot {
@@ -241,11 +287,13 @@ body {
   cursor: pointer;
   font-family: Inter, sans-serif;
   margin: 20px 0;
-  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  box-shadow: 0 0 0 rgba(17, 17, 17, 0);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 220ms ease;
 }
 
 .download-button:hover {
   background-color: var(--button-bg-hover);
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.06);
 }
 
 .size-6 {
@@ -310,6 +358,13 @@ background: var(--selection-bg);
     margin-left: 0;
   }
 
+  .name-avatar {
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    bottom: calc(100% + 14px);
+  }
+
   footer p {
     margin: 60px 0 56px;
   }
@@ -338,6 +393,7 @@ background: var(--selection-bg);
   }
 
   .header h1,
+  .name-avatar,
   .email-icon {
     transition: none;
   }
@@ -357,4 +413,9 @@ body.dark-mode {
   --selection-bg: #f7f3ed;
   --selection-text: #121318;
   color-scheme: dark;
+}
+
+body.dark-mode .name-avatar {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
 }
