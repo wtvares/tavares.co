@@ -109,16 +109,16 @@ body {
   width: 108%;
   margin-left: -4%;
   display: block;
-  border-radius: 20px;
-  clip-path: inset(0 round 20px);
+  border-radius: 24px;
+  clip-path: inset(0 round 24px);
 }
 
 .image-section video {
   width: 108%;
   margin-left: -4%;
   display: block;
-  border-radius: 20px;
-  clip-path: inset(0 round 20px);
+  border-radius: 24px;
+  clip-path: inset(0 round 24px);
 }
 
 .caption {
